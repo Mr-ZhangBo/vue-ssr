@@ -6,6 +6,17 @@ import { createStore } from './store'
 
 Vue.config.productionTip = false
 
+Vue.mixin({
+  beforeMount() {
+    if (this.$options.asyncData) {
+      this.$options.asyncData({
+        store: this.$store,
+        route: this.$route
+      })
+    }
+  }
+})
+
 export function createApp (context) {
   
   const router = createRouter()
@@ -16,7 +27,7 @@ export function createApp (context) {
     store,
     context,
     render: h => h(App)
-  }).$mount('#app')
+  })
 
   return { app, router, store }
 }
