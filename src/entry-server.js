@@ -5,7 +5,7 @@ import { createApp } from './main'
 
 export default context => {
 
-    return Promise((resolve, reject)=>{
+    return new Promise((resolve, reject)=>{
         const { app, router } = createApp(context);
 
         // 首屏
