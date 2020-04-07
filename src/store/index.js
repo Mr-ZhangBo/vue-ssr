@@ -7,8 +7,23 @@ export function createStore () {
             count:108
         },
         mutations: {
-        add(state){
-            state.count += 1; }
-        } 
+            init(state, count) {
+                state.count = count;
+            },
+            add(state){
+                state.count += 1;
+            }
+        },
+        actions: {
+            // 加一个异步请求count的action
+            getCount({ commit }) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        commit("init", Math.random() * 100);
+                        resolve();
+                    }, 1000);
+                });
+            },
+        },
     })
 }
