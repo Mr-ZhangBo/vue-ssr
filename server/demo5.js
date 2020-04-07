@@ -22,7 +22,7 @@ app.get('*', async function (req, res) {
             url: req.url,
             title: 'ssr test',
         })
-        console.log(html)
+        // console.log(html)
         res.send(html)
     }catch(err){
         console.log(err)

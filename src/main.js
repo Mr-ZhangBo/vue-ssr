@@ -7,8 +7,10 @@ import { createStore } from './store'
 Vue.config.productionTip = false
 
 export function createApp (context) {
+  
   const router = createRouter()
   const store = createStore()
+  
   const app = new Vue({
     router,
     store,

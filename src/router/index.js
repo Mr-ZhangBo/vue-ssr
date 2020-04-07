@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
+import Index from '@/views/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,10 @@ export function createRouter() {
         // name: 'Home',
         component: Home
         // component: { template: `<div>index page</div>` }
+      },
+      {
+        path: '/index',
+        component: Index
       },
       {
         path: '/detail',
